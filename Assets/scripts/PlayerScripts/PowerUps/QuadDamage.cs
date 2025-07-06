@@ -4,10 +4,11 @@ using UnityEngine.Rendering;
 [CreateAssetMenu(menuName = "Powerups/QuadDamage")]
 public class QuadDamage : PowerUpEffect
 {
-    public float amount;
-    public override void Apply(GameObject Projectile)
+    private float amount = 4;
+    public Projectile projectile;
+    public override void Apply(GameObject Player)
     {
-        Projectile.GetComponent<Projectile>().projectileDamage = amount;
+        projectile.projectileDamage = amount;
         Debug.Log("Player Damage Increased");
     }
 }
